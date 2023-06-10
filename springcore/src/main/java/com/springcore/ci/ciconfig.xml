@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="
+	http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 	http://www.springframework.org/schema/beans/spring-beans.xsd
+ 	http://www.springframework.org/schema/context
+ 	http://www.springframework.org/schema/context/spring-context.xsd">
+ 	
+ 	<!-- constructor injection -->
+ 	<!-- using c schema in below bean -->
+ 	<bean class="com.springcore.ci.Certificate" name="cert" c:name="python programming language" />
+		<!-- <constructor-arg value="Android using kotlin" />
+	</bean> -->
+
+	<!-- constructor injection || Injecting object of Certificate class into constructor of Person class as third argument -->
+	<bean class="com.springcore.ci.Person" name="person">
+	<!-- By default passed value is string in <constructor-arg> tag, if type is not specified -->
+		<constructor-arg value="Rohan" />
+		<constructor-arg value="988" type="int"/>
+		<constructor-arg ref="cert" />
+		<constructor-arg>
+                  <list>
+                      <value>Rajasthan</value>
+                      <value>Manglore</value>
+                      <value>Noida</value>
+                  </list>
+        </constructor-arg>
+	</bean>
+	
+	<bean class="com.springcore.ci.Addition" name="add">
+		<constructor-arg value="12" index="1"/>
+		<constructor-arg value="34" index="0"/>		
+	</bean>
+	
+</beans>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="
+	http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 	http://www.springframework.org/schema/beans/spring-beans.xsd
+ 	http://www.springframework.org/schema/context
+ 	http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- collection beans -->
+	<bean class="com.springcore.collection.Emp"
+	name="employee">
+	<property name="names">	
+		<list>
+			<value>Rohan</value>
+			<value>Tinku</value>
+			<null/>
+		</list>
+	</property>
+	<property name="phones">
+		<list>
+			<value>6261122929</value>
+			<value>8827494155</value>
+		</list>
+	</property>
+	<property name="addresses">
+		<set>
+			<value>Bengaluru</value>
+			<value>Noida</value>
+		</set>
+	</property>
+	<property name="courses">
+		<map>
+			<entry key="java" value="best" />
+			<entry key="C" value="mother of all language" />
+			<entry key="C++" value="Oops with C" />
+		</map>
+	</property>
+	
+	<property name="props">
+		<props>
+			<prop key="username"> rohan.d98</prop>
+			<prop key="password">rohan@123</prop>
+		</props>
+	</property>
+
+</bean>
+	
+</beans>
